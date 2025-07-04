@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body class="bg-light">
+    <div class="container mt-5 text-center">
+        <div class="card shadow-lg p-5">
+            <h2 class="mb-4">Customer Churn Prediction</h2>
+            <h4>You are likely to: 
+                <span class="{{ 'text-danger' if prediction == 'churn' else 'text-success' }}">
+                    <strong>{{ prediction }}</strong>
+                </span>
+            </h4>
+            <a href="/" class="btn btn-outline-secondary mt-4">Go Back</a>
+        </div>
+    </div>
+</body>
+</html>
